@@ -16,9 +16,7 @@ if [[ ! $ZONE ]] && [[ ! $REGION ]]; then
 fi
 
 if [[ ! -z $GCLOUD_SERVICE_KEY_BASE64 ]]; then
-  echo "[ERROR] You need to set the GCLOUD_SERVICE_KEY_BASE64 environment variable for this script to work"
   echo $GCLOUD_SERVICE_KEY_BASE64 | base64 -d > $GOOGLE_APPLICATION_CREDENTIALS
-  exit 1
 fi
 
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS

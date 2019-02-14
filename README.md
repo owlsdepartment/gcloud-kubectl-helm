@@ -14,3 +14,10 @@ base64 service-account.json
 - ZONE: gcloud zone, e.g. europe-west2-a
 - REGION: gcloud region, e.g. europe-west2
 - GCLOUD_SERVICE_KEY_BASE64: base64 encoded service-account.json file
+
+## Build and push image
+``` sh
+docker build . -t owlsdepartment/gloud-kubectl-helm
+docker tag owlsdepartment/gloud-kubectl-helm owlsdepartment/gloud-kubectl-helm:${VERSION}
+docker push owlsdepartment/gloud-kubectl-helm
+```

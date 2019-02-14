@@ -10,13 +10,15 @@ if [[ ! $GKE_CLUSTER ]]; then
   echo "[ERROR] You need to set the GKE_CLUSTER environment variable for this script to work"
   exit 1
 fi
-if [[ ! $ZONE && ! $REGION ]]; then
+if [[ ! $ZONE ]] && [[ ! $REGION ]]; then
   echo "[ERROR] You need to set the ZONE or REGION environment variable for this script to work"
   exit 1
 fi
 
 if [[ ! -z $GCLOUD_SERVICE_KEY_BASE64 ]]; then
+  echo "[ERROR] You need to set the GCLOUD_SERVICE_KEY_BASE64 environment variable for this script to work"
   echo $GCLOUD_SERVICE_KEY_BASE64 | base64 -d > $GOOGLE_APPLICATION_CREDENTIALS
+  exit 1
 fi
 
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS

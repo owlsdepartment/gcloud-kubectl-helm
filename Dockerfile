@@ -22,4 +22,5 @@ RUN set -ex ; \
   mv linux-amd64/helm /google-cloud-sdk/bin/helm; \
   apk del .setup_dependencies;
 
-ENTRYPOINT [ "/usr/bin/run.sh" ]
+RUN helm init -c --skip-refresh; \
+  helm plugin install https://github.com/nouney/helm-gcs;

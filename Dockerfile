@@ -6,8 +6,6 @@ ENV GCLOUD_SDK 233.0.0
 ENV PATH /google-cloud-sdk/bin:$PATH
 ENV GOOGLE_APPLICATION_CREDENTIALS /secret.json
 
-COPY run.sh /usr/bin/run.sh
-
 RUN set -ex ; \
   chmod +x /usr/bin/run.sh; \
   apk --no-cache add python curl git; \

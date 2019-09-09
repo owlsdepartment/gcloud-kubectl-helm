@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV HELM_VERSION v2.8.0
+ENV HELM_VERSION v2.10.0
 ENV GCLOUD_SDK 233.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH

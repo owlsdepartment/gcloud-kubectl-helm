@@ -20,4 +20,4 @@ RUN set -ex ; \
   apk del .setup_dependencies;
 
 RUN helm init -c --skip-refresh; \
-  helm plugin install https://github.com/nouney/helm-gcs;
+  helm plugin install https://github.com/nouney/helm-gcs --version=0.2.2;

@@ -2,6 +2,7 @@ FROM alpine:3.12
 
 ENV HELM_VERSION v2.16.9
 ENV GCLOUD_SDK 300.0.0
+ENV HELM_GCS 0.2.2
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 ENV GOOGLE_APPLICATION_CREDENTIALS /secret.json
@@ -20,4 +21,4 @@ RUN set -ex ; \
   apk del .setup_dependencies;
 
 RUN helm init -c --skip-refresh; \
-  helm plugin install https://github.com/nouney/helm-gcs --version=0.2.2;
+  helm plugin install https://github.com/nouney/helm-gcs --version=${HELM_GCS};

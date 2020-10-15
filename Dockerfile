@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.12
 
 ENV HELM_VERSION v3.3.4
 ENV GCLOUD_SDK 314.0.0

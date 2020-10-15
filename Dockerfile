@@ -19,7 +19,7 @@ RUN set -ex ; \
   wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz; \
   tar -xzf helm-${HELM_VERSION}-linux-amd64.tar.gz; \
   rm -rf helm-${HELM_VERSION}-linux-amd64.tar.gz; \
-  mv linux-amd64/helm /google-cloud-sdk/bin/helm; \
+  ln -s /linux-amd64/helm /bin/helm; \
   apk del .setup_dependencies;
 
 RUN helm init -c --skip-refresh; \

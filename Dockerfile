@@ -7,7 +7,7 @@ ENV PATH /google-cloud-sdk/bin:$PATH
 ENV GOOGLE_APPLICATION_CREDENTIALS /secret.json
 
 RUN set -ex ; \
-  apk --no-cache add python curl git; \
+  apk --no-cache add python3 curl git; \
   apk --no-cache --virtual .setup_dependencies add ca-certificates wget; \
   wget -q https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_SDK}-linux-x86_64.tar.gz; \
   tar xzf google-cloud-sdk-${GCLOUD_SDK}-linux-x86_64.tar.gz; \
